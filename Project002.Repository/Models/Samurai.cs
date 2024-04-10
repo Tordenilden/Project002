@@ -14,6 +14,7 @@ namespace Project002.Repository.Models
     /// 4) go to console => add-migration name
     /// 5) go to console => database-update
     /// 6) Done
+    /// 7) If the F.. S.. N.. W.. Then activate the DI in Program.cs....
     /// 
     /// </summary>
     public class Samurai

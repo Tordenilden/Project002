@@ -1,6 +1,8 @@
 
 using Microsoft.EntityFrameworkCore;
+using Project002.Repository.Interfaces;
 using Project002.Repository.Models;
+using Project002.Repository.Repositories;
 
 namespace Project002.API
 {
@@ -20,6 +22,9 @@ namespace Project002.API
 
             string conStr = @"Server=TEC-8220-LA0025;Database=Project002; Trusted_Connection=true";
             builder.Services.AddDbContext<Dbcontext>(obj => obj.UseSqlServer(conStr));
+
+            // DI - activations
+            builder.Services.AddScoped<ISamuraiRepository, SamuraiRepositories>();
 
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
