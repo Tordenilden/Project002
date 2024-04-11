@@ -10,5 +10,6 @@ namespace Project002.Repository.Interfaces
     public interface ISamuraiRepository
     {
         Samurai Create(Samurai samurai);
+        List<Samurai> GetAll();
     }
 }

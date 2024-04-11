@@ -23,5 +23,10 @@ namespace Project002.Repository.Repositories
             context.SaveChanges();
             return samurai;
         }
+
+        public List<Samurai> GetAll()
+        {
+            return context.Samurai.ToList();
+        }
     }
 }

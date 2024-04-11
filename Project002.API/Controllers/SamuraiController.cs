@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Project002.Repository.Interfaces;
+using Project002.Repository.Models;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -19,24 +20,37 @@ namespace Project002.API.Controllers
 
 
 
-        // GET: api/<SamuraiController>
+
         [HttpGet] // This is a DataAnnotation / Attribute
-        public IEnumerable<string> Get()
+        public IEnumerable<Samurai> GetAll()
         {
-            return new string[] { "value1", "value2" };
+            // If I want to DEBUG!!
+            var result = repo.GetAll();
+            return result;
+            
         }
+
+
+
+        // Create
+        [HttpPost]
+        public void Create(Samurai samurai)
+        {
+            //Samurai s = new Samurai(); // blablabla
+            repo.Create(samurai);
+            
+        }
+
+
+
+
+
 
         // GET api/<SamuraiController>/5
         [HttpGet("{id}")]
         public string Get(int id)
         {
             return "value";
-        }
-
-        // POST api/<SamuraiController>
-        [HttpPost]
-        public void Post([FromBody] string value)
-        {
         }
 
         // PUT api/<SamuraiController>/5

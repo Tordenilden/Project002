@@ -20,7 +20,7 @@ namespace Project002.API
             //var constr = @"Server=TEC-8220-LA0025;Database=cinema2023; Trusted_Connection=true";
             //builder.Services.AddDbContext<DatabaseContext>(o => o.UseSqlServer(constr));
 
-            string conStr = @"Server=TEC-8220-LA0025;Database=Project002; Trusted_Connection=true";
+            string conStr = @"Server=TEC-8220-LA0025;Database=Project002; Trusted_Connection=true; Trust Server Certificate=true; Integrated Security=true; ";
             builder.Services.AddDbContext<Dbcontext>(obj => obj.UseSqlServer(conStr));
 
             // DI - activations
