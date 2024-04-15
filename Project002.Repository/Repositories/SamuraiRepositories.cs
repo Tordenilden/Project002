@@ -1,4 +1,5 @@
-﻿using Project002.Repository.Interfaces;
+﻿using Microsoft.EntityFrameworkCore;
+using Project002.Repository.Interfaces;
 using Project002.Repository.Models;
 using System;
 using System.Collections.Generic;
@@ -27,6 +28,18 @@ namespace Project002.Repository.Repositories
         public List<Samurai> GetAll()
         {
             return context.Samurai.ToList();
+        }
+
+        public List<Horse> GetAllAndHorsie()
+        {
+            var result= context.Horse.Include(hest=>hest.Samurai).ToList();
+            return result;
+        }      
+        public List<Horse> GetAllAndHorsieWHERE()
+        {
+            var result= context.Horse.Include(hest=>hest.Samurai).
+                Where(ged=>ged.name == "gorm den tynde").ToList();
+            return result;
         }
     }
 }

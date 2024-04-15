@@ -11,5 +11,8 @@ namespace Project002.Repository.Interfaces
     {
         Samurai Create(Samurai samurai);
         List<Samurai> GetAll();
+        List<Horse> GetAllAndHorsie();
+        List<Horse> GetAllAndHorsieWHERE();
+
     }
 }

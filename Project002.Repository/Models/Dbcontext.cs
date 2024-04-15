@@ -16,5 +16,8 @@ namespace Project002.Repository.Models
         }
         // DbSet is "a" Table
         public DbSet<Samurai> Samurai { get; set; }
+        public DbSet<Horse> Horse { get; set; }
+
+
     }
 }

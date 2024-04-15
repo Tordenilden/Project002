@@ -29,8 +29,24 @@ namespace Project002.API.Controllers
             return result;
             
         }
+        [HttpGet("something")] // This is a DataAnnotation / Attribute
+        public IEnumerable<Horse> GetAllAndHorsie()
+        {
+            // If I want to DEBUG!!
+            var result = repo.GetAllAndHorsie();
+            return result;
+            
+        }
+        [HttpGet("blablabla")] // This is a DataAnnotation / Attribute
+        public IEnumerable<Horse> GetAllAndHorsieWHERE()
+        {
+            // If I want to DEBUG!!
+            var result = repo.GetAllAndHorsieWHERE();
+            return result;
+            
+        }
 
-
+       
 
         // Create
         [HttpPost]
