@@ -26,21 +26,23 @@ namespace Project002.API
             // DI - activations
             builder.Services.AddScoped<ISamuraiRepository, SamuraiRepositories>();
 
+
+            // Croos Thread problems
+            builder.Services.AddCors(options =>
+            {
+                options.AddPolicy("coffee",
+                                      policy =>
+                                      {
+                                          policy.AllowAnyOrigin() // this is really bad outside TEC
+                                                .AllowAnyHeader()
+                                                .AllowAnyMethod();
+                                      });
+            });
+
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
             #endregion add features
-
-
-
-
-
-
-
-
-
-
-
 
             var app = builder.Build();
 
@@ -50,7 +52,7 @@ namespace Project002.API
                 app.UseSwagger();
                 app.UseSwaggerUI();
             }
-
+            app.UseCors("coffee");
             app.UseHttpsRedirection();
 
             app.UseAuthorization();

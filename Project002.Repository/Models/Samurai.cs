@@ -24,5 +24,9 @@ namespace Project002.Repository.Models
         public string Name { get; set; }
         public string Description { get; set; }
         public int Age { get; set; }
+        //version 6.0
+        //public List<Battle> Battle { get; set; } = new List<Battle>();
+        //version 5.0
+        public List<BattleSamurai> BattleSamurais { get; set; } = new List<BattleSamurai>();
     }
 }

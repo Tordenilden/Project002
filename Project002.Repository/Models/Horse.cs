@@ -14,6 +14,15 @@ namespace Project002.Repository.Models
         public int SamuraiId { get; set; } // FK to Samurai table
         public Samurai Samurai { get; set; } = new Samurai();
 
+        public Horse()
+        {
+                
+        }
+        public Horse(string color)
+        {
+            name = color;
+        }
+
         // If I had a List or Model I would not have in "Swagger"
         // [JSONIgnore] and ? in the Property
         //[JsonIgnore]
